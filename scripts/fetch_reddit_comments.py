@@ -6,11 +6,14 @@ Purpose: Fetch comments from posts in r/Taoism using PRAW.
 import praw
 import pandas as pd
 import time
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 reddit = praw.Reddit(
-    client_id="drw_9HBEZYecrS24qicACw",
-    client_secret="pX6-wZAYtEpjlPNnLcpB-lWGYkGH_w",
-    user_agent="fetch_agent by u/queridomutante"
+    client_id = os.getenv("REDDIT_CLIENT_ID"),
+    client_secret = os.getenv("REDDIT_CLIENT_SECRET"),
+    user_agent=os.getenv("REDDIT_USER_AGENT")
 )
 
 def fetch_comments_for_post(post_id):

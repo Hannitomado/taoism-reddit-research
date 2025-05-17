@@ -1,0 +1,16 @@
+praw
+pandas
+numpy
+nltk
+spacy
+scikit-learn
+transformers
+bertopic
+matplotlib
+seaborn
+plotly
+streamlit
+networkx
+umap-learn
+hdbscan
+flask

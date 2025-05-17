@@ -1,0 +1,24 @@
+# Ignore environment variables and secrets
+.env
+
+# Ignore virtual environments
+.venv/
+venv/
+
+# Ignore Python cache and build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore model outputs and logs
+*.pkl
+*.log
+
+# Ignore VS Code settings
+.vscode/
+.venv/
+__pycache__/

@@ -51,7 +51,7 @@ Boe, B. (2023). PRAW: The Python Reddit API Wrapper (version 7.7.1). https://pra
 ### 6. Interactive App (Streamlit)
 
 - Explore the dataset interactively:
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/Hannitomado/taoism_reddit_research/main/app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://taoism-reddit-research-7b4nxl3v9jepkt5xkj2b3p.streamlit.app)
 
 The app allows users to:
 - Filter comments by **Rhetorical Frame**, **Topic**, **Sentiment**, and **Emotion**.

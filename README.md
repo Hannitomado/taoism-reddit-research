@@ -11,33 +11,42 @@ The project aims to uncover how Taoist concepts are discussed, adapted, and emot
 The process involved the following steps:
 
 ### 1. Data Collection
-- Extracted 100 Reddit posts and their associated comments from r/Taoism using the Reddit API.
-- Saved and preprocessed all textual content to remove noise and prepare for analysis.
+Reddit comments were collected using PRAW (Python Reddit API Wrapper), an open-source Python library that provides access to Reddit’s official API. PRAW allows authenticated queries to Reddit and supports structured retrieval of posts, comments, and associated metadata. In this project, we used PRAW to extract all public comments from a set of posts in r/Taoism, saving the following fields: post ID, comment ID, parent ID, author, body text, score, creation timestamp, and comment depth.
 
-### 2. Topic Modeling and Labeling
-- Used BERTopic to perform unsupervised topic modeling on the comment corpus.
-- Extracted top keywords and representative comments for each topic.
-- Applied GPT-4 to generate descriptive topic labels based on semantic patterns.
+Reference:
+Boe, B. (2023). PRAW: The Python Reddit API Wrapper (version 7.7.1). https://praw.readthedocs.io/en/latest/
 
-### 3. Thematic Categorization
-- Grouped all topics into four main interpretive themes:
-  - Practical Taoism
-  - Philosophical Exploration
-  - Community Relationships
-  - Meta / Off-topic
+### 2. Text Preprocessing
+- Applied spaCy-based text preprocessing to clean the comment corpus.
+  - Performed lemmatization.
+  - Removed stopwords, punctuation, URLs, and other non-informative elements.
+- The cleaned text was used as input for topic modeling.
+- The original (uncleaned) text was preserved for sentiment and emotion analysis.
+
+### 3. Topic Modeling
+- Performed topic modeling on the comment corpus using semantic embeddings and KMeans clustering.
+- Selected 15 clusters based on silhouette scores and interpretability.
+- Used GPT-4 to generate descriptive topic labels for each cluster, based on representative comments and keywords.
+- Merged similar labels into six broader thematic categories.
+- Assigned each merged topic one of Campbell & Teusner’s (2015) five rhetorical frames (Identity, Community, Network, Authority, Blurring Online/Offline).
 
 ### 4. Sentiment and Emotion Analysis
-- Applied the CardiffNLP RoBERTa sentiment model to score each comment’s sentiment.
-- Used NRCLex to classify comments according to dominant emotional tone (e.g. trust, fear, joy).
-- Identified the most emotionally polarizing topics based on sentiment variance.
+- Applied the CardiffNLP RoBERTa sentiment model to classify each comment as positive, neutral, or negative.
+  - Model used: cardiffnlp/twitter-roberta-base-sentiment
+- Applied the GoEmotions model to classify each comment according to 28 possible emotions.
+  - Extracted both top emotion and all detected emotions above threshold.
+- Integrated sentiment and emotion annotations into the dataset for analysis of affective patterns across topics and rhetorical frames.
 
-### 5. Rhetorical Labeling
-- Used GPT-4 to assign a rhetorical category to each comment, such as:
-  - Moral reasoning
-  - Personal reflection
-  - Philosophical speculation
-  - Humor or irony
-  - Confession or testimony
+### 5. Statistical Analysis
+- Conducted descriptive analysis of sentiment and emotion distributions across the dataset.
+- Performed Chi-squared tests to assess:
+  - Association between sentiment and emotion.
+  - Association between emotion and rhetorical frame.
+- Visualized patterns using:
+  - Bar plots (sentiment and emotion distributions).
+  - Heatmaps (Emotion vs. Sentiment; Emotion vs. Rhetoric).
+  - Joy/Anger index (by rhetorical category).
+- Explored how affective tone varies across different discursive styles in the subreddit.
 
 ### 6. Dashboard Development
 - Built an interactive dashboard using Streamlit.

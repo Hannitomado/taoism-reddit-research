@@ -6,7 +6,7 @@ import pandas as pd
 # Load the final dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/taoism_comments_labeled_with_sentiment_emotion.csv")
+    df = pd.read_csv("taoism_comments_labeled_with_sentiment_emotion.csv")
     return df
 
 df = load_data()

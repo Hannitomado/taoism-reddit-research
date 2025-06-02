@@ -48,17 +48,15 @@ Boe, B. (2023). PRAW: The Python Reddit API Wrapper (version 7.7.1). https://pra
   - Joy/Anger index (by rhetorical category).
 - Explored how affective tone varies across different discursive styles in the subreddit.
 
-### 6. Dashboard Development
-- Built an interactive dashboard using Streamlit.
-- Users can filter comments by theme, topic, sentiment, emotion, and rhetorical style.
-- Each comment is annotated with all relevant metadata, making the dataset easily explorable for qualitative analysis.
+### 6. Interactive App (Streamlit)
 
-## Live App
+- Explore the dataset interactively:
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/Hannitomado/taoism_reddit_research/main/app.py)
 
-To explore the dashboard online, visit:
-
-https://taoism-reddit-research-7b4nxl3v9jepkt5xkj2b3p.streamlit.app/ 
-
+The app allows users to:
+- Filter comments by **Rhetorical Frame**, **Topic**, **Sentiment**, and **Emotion**.
+- View annotated comments (topic, rhetoric, sentiment, emotion).
+- Visualize distributions of rhetorical frames, sentiment, emotions, and topics.
 
 ### Author
 Created by Hannibal Tomasson Izquierdo. This project was developed as part of a research initiative on digital religion and affective discourse in online communities.
